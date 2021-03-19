@@ -1,19 +1,32 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <h1>QR Generator</h1>
+    <QRForm @dataReady="getData" />
+    <QRResult :qrData="qrData" v-show="qrData != null" />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import QRForm from "./components/QRForm.vue";
+import QRResult from "./components/QRResult.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    QRForm,
+    QRResult,
+  },
+  data() {
+    return {
+      qrData: null,
+    };
+  },
+  methods: {
+    getData(newData) {
+      this.qrData = newData;
+    },
+  },
+};
 </script>
 
 <style>

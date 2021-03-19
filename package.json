@@ -9,6 +9,9 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
+    "file-saver": "^2.0.5",
+    "image-downloader": "^4.0.2",
+    "qrcode": "^1.4.4",
     "vue": "^2.6.11"
   },
   "devDependencies": {
